@@ -226,6 +226,16 @@ if (SOLOUD_BACKEND_XAUDIO2)
 	)
 endif()
 
+if (SOLOUD_BACKEND_OPENAL)
+	add_definitions (-DWITH_OPENAL)
+
+	set (BACKENDS_SOURCES
+		${BACKENDS_SOURCES}
+		${BACKENDS_PATH}/openal/soloud_openal.cpp
+		${BACKENDS_PATH}/openal/soloud_openal_dll.c
+	)
+endif()
+
 if (SOLOUD_BACKEND_WINMM)
 	add_definitions (-DWITH_WINMM)
 
